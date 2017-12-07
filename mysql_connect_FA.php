@@ -1,6 +1,6 @@
 <?php
 
-	$dbc=mysqli_connect('localhost', 'root', '', 'facultyassociation');
+	$dbc=mysqli_connect('localhost', 'root', '1234', 'facultyassocnew');
 
 	if (!$dbc) {
 
