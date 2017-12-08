@@ -747,17 +747,17 @@
 
                         <label>
                         <span class="labelspan">Father's First Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="fatherfirst">
                         </label>
 
                         <label>
                         <span class="labelspan">Father's Middle Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="fathermiddle">
                         </label>
 
                         <label>
                         <span class="labelspan">Father's Last Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="fatherlast">
                         </label>
 
                     </div>
@@ -770,61 +770,62 @@
 
                         <label>
                         <p class="dbirthlabel"><b>Date of Birth</b></p>
-                        <select class="form-control datedropdown health">
+                        <select name="fathermonth" class="form-control datedropdown health">
 
-                            <option>Month</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
+                            <option value="">Select Month</option>
+                            <option value=""> ----- </option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
 
                         </select>
                         </label>
 
                         <label>
-                        <select class="form-control datedropdown health">
+                        <select name="fatherday" class="form-control datedropdown health">
 
-                            <option>Day</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
+                            <option value="">Select Day</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($x = 1; $x <= 31; $x++) { ?>
+
+                                <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label class="yeardrop">
-                        <select class="form-control datedropdown health">
+                        <select name="fatheryear" class="form-control datedropdown health">
 
-                            <option>Year</option>
-                            <option>1995</option>
-                            <option>1994</option>
-                            <option>1993</option>
-                            <option>1992</option>
+                            <option value="">Select Year</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($y = 2017; $y >= 1900; $y--) { ?>
+
+                                <option value="<?php echo $y; ?>"><?php echo $y; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label>
                         <p class="dbirthlabel">Father's Status</p>
-                        <select class="form-control datedropdown health">
+                        <select name="fatherstatus" class="form-control datedropdown health">
 
-                            <option>Normal</option>
-                            <option>Deceased</option>
+                            <option value="1">Normal</option>
+                            <option value="0">Deceased</option>
 
                         </select>
                         </label>
@@ -843,17 +844,17 @@
 
                         <label>
                         <span class="labelspan">Mother's First Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="motherfirst">
                         </label>
 
                         <label>
                         <span class="labelspan">Mother's Middle Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="mothermiddle">
                         </label>
 
                         <label>
                         <span class="labelspan">Mother's Last Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="motherlast">
                         </label>
 
                     </div>
@@ -866,61 +867,62 @@
 
                         <label>
                         <p class="dbirthlabel"><b>Date of Birth</b></p>
-                        <select class="form-control datedropdown health">
+                        <select name="mothermonth" class="form-control datedropdown health">
 
-                            <option>Month</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
+                            <option value="">Select Month</option>
+                            <option value=""> ----- </option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
 
                         </select>
                         </label>
 
                         <label>
-                        <select class="form-control datedropdown health">
+                        <select name="motherday" class="form-control datedropdown health">
 
-                            <option>Day</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
+                            <option value="">Select Day</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($x = 1; $x <= 31; $x++) { ?>
+
+                                <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label class="yeardrop">
-                        <select class="form-control datedropdown health">
+                        <select name="motheryear" class="form-control datedropdown health">
 
-                            <option>Year</option>
-                            <option>1995</option>
-                            <option>1994</option>
-                            <option>1993</option>
-                            <option>1992</option>
+                            <option value="">Select Year</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($y = 2017; $y >= 1900; $y--) { ?>
+
+                                <option value="<?php echo $y; ?>"><?php echo $y; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label>
-                        <p class="dbirthlabel">Father's Status</p>
-                        <select class="form-control datedropdown health">
+                        <p class="dbirthlabel">Mother's Status</p>
+                        <select name="motherstatus" class="form-control datedropdown health">
 
-                            <option>Normal</option>
-                            <option>Deceased</option>
+                            <option value="1">Normal</option>
+                            <option value="0">Deceased</option>
 
                         </select>
                         </label>
@@ -934,22 +936,22 @@
                 <div class="row">
 
                     <div class="col-lg-12">
-
+<!-- Include in the PHP -->
                         <h3 class="healthfieldlabel">Spouse's Information</h3>
 
                         <label>
                         <span class="labelspan">Spouse's First Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="spousefirst">
                         </label>
 
                         <label>
                         <span class="labelspan">Spouse's Middle Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="spousemiddle">
                         </label>
 
                         <label>
                         <span class="labelspan">Spouse's Last Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="spouselast">
                         </label>
 
                     </div>
@@ -962,57 +964,58 @@
 
                         <label>
                         <p class="dbirthlabel"><b>Date of Birth</b></p>
-                        <select class="form-control datedropdown health">
+                        <select name="spouseday" class="form-control datedropdown health">
 
-                            <option>Month</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
+                            <option value="">Select Month</option>
+                            <option value=""> ----- </option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
 
                         </select>
                         </label>
 
                         <label>
-                        <select class="form-control datedropdown health">
+                        <select name="spouseday" class="form-control datedropdown health">
 
-                            <option>Day</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
+                            <option value="">Select Day</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($x = 1; $x <= 31; $x++) { ?>
+
+                                <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label class="yeardrop">
-                        <select class="form-control datedropdown health">
+                        <select name="spouseyear"class="form-control datedropdown health">
 
-                            <option>Year</option>
-                            <option>1995</option>
-                            <option>1994</option>
-                            <option>1993</option>
-                            <option>1992</option>
+                            <option value="">Select Year</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($y = 2017; $y >= 1900; $y--) { ?>
+
+                                <option value="<?php echo $y; ?>"><?php echo $y; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label>
-                        <p class="dbirthlabel">Father's Status</p>
+                        <p class="dbirthlabel">Spouse's Status</p>
                         <select class="form-control datedropdown health">
 
                             <option>Normal</option>
@@ -1060,17 +1063,17 @@
 
                         <label>
                         <span class="labelspan">Children's First Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="childfirst[]">
                         </label>
 
                         <label>
                         <span class="labelspan">Children's Last Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="childlast[]">
                         </label>
 
                         <label>
                         <span class="labelspan">Children's Middle Name<big class="req"> *</big></span>
-                        <input type="text" class="form-control memname" placeholder="Name" name="fname">
+                        <input type="text" class="form-control memname" placeholder="Name" name="childmiddle[]">
                         </label>
 
                     </div>
@@ -1083,58 +1086,59 @@
 
                         <label>
                         <p class="dbirthlabel"><b>Date of Birth</b></p>
-                        <select class="form-control datedropdown health">
+                        <select name="childmonth[]" class="form-control datedropdown health">
 
-                            <option>Month</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
+                            <option value="">Select Month</option>
+                            <option value=""> ----- </option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
 
                         </select>
                         </label>
 
                         <label>
-                        <select class="form-control datedropdown health">
+                        <select name="childday[]" class="form-control datedropdown health">
 
-                            <option>Day</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
+                            <option value="">Select Day</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($x = 1; $x <= 31; $x++) { ?>
+
+                                <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label class="yeardrop">
-                        <select class="form-control datedropdown health">
+                        <select name="childyear[]" class="form-control datedropdown health">
 
-                            <option>Year</option>
-                            <option>1995</option>
-                            <option>1994</option>
-                            <option>1993</option>
-                            <option>1992</option>
+                            <option value="">Select Year</option>
+                            <option value=""> ----- </option>
+
+                            <?php for($y = 2017; $y >= 1900; $y--) { ?>
+
+                                <option value="<?php echo $y; ?>"><?php echo $y; ?></option>
+
+                            <?php } ?>
 
                         </select>
                         </label>
 
                         <label class="yeardrop">
                         <p class="dbirthlabel">Children's Sex</p>
-                        <select class="form-control datedropdown health">
+                        <select name="childsex" class="form-control datedropdown health">
 
                             <option>Male</option>
                             <option>Female</option>
@@ -1144,7 +1148,7 @@
 
                         <label class="yeardrop">
                         <p class="dbirthlabel">Children's Status</p>
-                        <select class="form-control datedropdown health">
+                        <select name="childstatus" class="form-control datedropdown health">
 
                             <option>Normal</option>
                             <option>Deceased</option>
@@ -1190,7 +1194,7 @@
 
                         <p>
 
-                        <input type="checkbox" name="hasChild" value="1"> I don't have siblings<p>
+                        <input type="checkbox" name="hasSibling" value="1"> I don't have siblings<p>
 
                     </div>
 

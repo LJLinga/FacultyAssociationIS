@@ -30,6 +30,74 @@
 
 </head>
 
+<?php 
+
+    session_start();
+
+    if ($_SESSION['usertype'] != 2) {
+
+        header("Location: http://".$_SERVER['HTTP_HOST'].  dirname($_SERVER['PHP_SELF'])."/index.php");
+        
+    }
+
+    $idnum = $_SESSION['idnum'];
+
+    require_once('../mysql_connect_FA.php');
+
+    $queryMem = "SELECT M.PAYROLL_ID FROM MEMBER AS M WHERE M.MEMBER_ID = '{$idnum}'";
+
+    $resultMem = mysqli_query($dbc, $queryMem);
+    $rowMem = mysqli_fetch_array($resultMem);
+
+    $queryForm = "SELECT M.LOAN_ID FROM MEMBER_LOANS AS M
+                  WHERE M.MEMBER_ID = '{$idnum}' AND M.APP_STATUS = 1";
+
+    $resultForm = mysqli_query($dbc, $queryForm);
+    $resultRowForm = mysqli_fetch_array($resultForm);
+
+    if (!empty($resultRowForm)) {
+
+        header("Location: http://".$_SERVER['HTTP_HOST'].  dirname($_SERVER['PHP_SELF'])."/member pending_falp.php");
+
+    }
+
+    if ($rowMem['PAYROLL_ID'] == 6 || $rowMem['PAYROLL_ID'] == 7) {
+
+        $loanID = 2;
+
+    }
+
+    else {
+    
+        $loanID = 1;
+
+    }
+
+    $queryAmount = "SELECT L.AMOUNT, L.INTEREST, L.PAYMENT_TERMS, L.NUM_PAYMENTS, L.TOTAL_DEDUCTION, L.MONTHLY_DEDUCTION, 
+                    L.PER_PAYMENT_DEDUCTION
+                    FROM LOAN_LIST AS L
+                    WHERE L.LOAN_ID = '{$loanID}'";
+
+    $resultAmount = mysqli_query($dbc, $queryAmount);
+    $resultRow = mysqli_fetch_array($resultAmount);
+
+    if (isset($_POST['apply'])) {
+
+        $queryApply = "INSERT INTO MEMBER_LOANS (MEMBER_ID, LOAN_ID, APP_STATUS, DATE_APPLIED, LOAN_STATUS, PICKUP_STATUS)
+
+                       VALUES ('{$idnum}', '{$loanID}', '1', NOW(), '1', '1')";
+
+        $resultApply = mysqli_query($dbc, $queryApply);
+
+        $queryTransaction = "INSERT INTO TRANSACTIONS (MEMBER_ID, AMOUNT, TXN_DATE, TXN_TYPE, TXN_STATUS) 
+                             VALUES ({$_SESSION['idnum']}, 0, NOW(), 1, 'FALP Application Submitted')";
+
+        $resultTransaction = mysqli_query($dbc, $queryTransaction);
+
+    }
+
+?>
+
 <body>
 
     <div id="wrapper">
@@ -359,7 +427,7 @@
                                         <div class="form-group input-group">
 
                                             <span class="input-group-addon"><b>₱</b></span>
-                                            <input type="text" class="form-control" placeholder="Enter Amount">
+                                            <input name="loanToBorrow" type="text" class="form-control" placeholder="Enter Amount">
 
                                         </div>
 
@@ -371,7 +439,7 @@
 
                                             <label>Payment Terms</label>
 
-                                            <select class="form-control">
+                                            <select name="paymentterms" class="form-control">
 
                                                 <option>5</option>
                                                 <option>6</option>
